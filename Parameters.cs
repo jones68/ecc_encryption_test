@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Diagnostics;
 
 namespace ecc_encryption_test
 {
@@ -23,7 +24,7 @@ namespace ecc_encryption_test
 		readonly float errorStrength;
 		
 		
-		public Parameters(int custom, int numDatawords, int datawordLength, int parityLength, int errorStrength)
+		public Parameters(int custom, int numDatawords, int datawordLength, int parityLength, float errorStrength)
 		{
 			if (custom == 0){
 				this.numDatawords = Defaults.DEFAULT_NUM_DATAWORDS;
@@ -45,10 +46,10 @@ namespace ecc_encryption_test
 		
 		private void checkParamsValid()
 		{
-			assert(numDatawords <= Defaults.MAX_NUM_DATAWORDS && numDatawords >= Defaults.MIN_NUM_DATAWORDS);
-			assert(datawordLength <= Defaults.MAX_DATAWORD_LENGTH && datawordLength >= Defaults.MIN_DATAWORD_LENGTH);
-			assert(parityLength <= Defaults.MAX_PARITY_LENGTH && numDatawords >= Defaults.MIN_PARITY_LENGTH);
-			assert(errorStrength <= Defaults.MAX_ERROR_STRENGTH && errorStrength >= Defaults.MIN_ERROR_STRENGTH);		
+			Debug.Assert(numDatawords <= Defaults.MAX_NUM_DATAWORDS && numDatawords >= Defaults.MIN_NUM_DATAWORDS);
+			Debug.Assert(datawordLength <= Defaults.MAX_DATAWORD_LENGTH && datawordLength >= Defaults.MIN_DATAWORD_LENGTH);
+			Debug.Assert(parityLength <= Defaults.MAX_PARITY_LENGTH && numDatawords >= Defaults.MIN_PARITY_LENGTH);
+			Debug.Assert(errorStrength <= Defaults.MAX_ERROR_STRENGTH && errorStrength >= Defaults.MIN_ERROR_STRENGTH);		
 			
 		}
 	}

@@ -17,7 +17,7 @@ namespace ecc_encryption_test
 	{
 		
 		Dataword bufferedDWord;
-		private static int parityLength;
+		private int parityLength;
 		
 		public Encoder(int parityLength)
 		{
@@ -40,15 +40,19 @@ namespace ecc_encryption_test
 			return codeword;
 		}
 		
+		//Dummy parity at the moment
 		private Dataword calculateParity()
 		{
-			Dataword parity = new Dataword(true, parityLength);
+			Dataword parity = new Dataword("1", parityLength);
+			return parity;
 		}
 		
 		
-		private Dataword concatenate()
+		//dummy return value at the moment
+		private Dataword concatenate(Dataword d1, Dataword d2)
 		{
 		
+			return d1;
 		
 		}
 		

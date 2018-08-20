@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Diagnostics;
 
 namespace ecc_encryption_test
 {
@@ -35,10 +36,10 @@ namespace ecc_encryption_test
 			Console.WriteLine("Please enter 1 to use custom values and 0 to use default values.");
 			custom = Console.ReadLine();
 			
-			assert(custom == "1" || custom == "0");
+			Debug.Assert(custom == "1" || custom == "0");
 			
-			this.custom = ToInt32(custom);
-			return ToInt32(custom);
+			this.custom = Convert.ToInt32(custom);
+			return Convert.ToInt32(custom);
 		}
 		
 		
@@ -55,7 +56,7 @@ namespace ecc_encryption_test
 				int parityLength = getParityLengthFromUser();
 				float errorStrength = getErrorStrengthFromUser();
 			
-				inputParams = new Parameters(1,numDatawords,datawordLength,parityLength,errorStrength);
+				inputParams = new Parameters(1,numDatawords,datawordLength,parityLength, errorStrength);
 			}
 			
 			else 
@@ -77,11 +78,11 @@ namespace ecc_encryption_test
 		private int getNumDatawordsFromUser()
 		{
 			bool validInput = false;
-			int numDatawords;
+			int numDatawords = 0;
 			while(validInput == false)
 			{
 				Console.WriteLine("Please enter a number of datawords between {0} and {1}", Defaults.MIN_NUM_DATAWORDS, Defaults.MAX_NUM_DATAWORDS);
-				numDatawords = ToInt32(Console.ReadLine());
+				numDatawords = Convert.ToInt32(Console.ReadLine());
 				if(numDatawords <= Defaults.MAX_NUM_DATAWORDS && numDatawords >= Defaults.MIN_NUM_DATAWORDS)
 				{
 					validInput = true;
@@ -100,10 +101,10 @@ namespace ecc_encryption_test
 		private int getDatawordLengthFromUser()
 		{
 			bool validInput = false;
-			int datawordLength;
+			int datawordLength = 0;
 			while(validInput == false){
 				Console.WriteLine("Please enter a dataword length between {0} and {1}", Defaults.MIN_DATAWORD_LENGTH, Defaults.MAX_DATAWORD_LENGTH);
-				datawordLength = ToInt32(Console.ReadLine());
+				datawordLength = Convert.ToInt32(Console.ReadLine());
 				
 				if(datawordLength <= Defaults.MAX_DATAWORD_LENGTH && datawordLength >= Defaults.MIN_DATAWORD_LENGTH)
 				{
@@ -122,11 +123,11 @@ namespace ecc_encryption_test
 		private int getParityLengthFromUser()
 		{
 			bool validInput = false;
-			int parityLength;
+			int parityLength = 0;
 			
 			while(validInput == false){
 				Console.WriteLine("Please enter a parity length between {0} and {1}", Defaults.MIN_PARITY_LENGTH, Defaults.MAX_PARITY_LENGTH);
-				parityLength = ToInt32(Console.ReadLine());
+				parityLength = Convert.ToInt32(Console.ReadLine());
 				
 				if(parityLength <= Defaults.MAX_PARITY_LENGTH && parityLength >= Defaults.MIN_PARITY_LENGTH)
 				{
@@ -145,11 +146,11 @@ namespace ecc_encryption_test
 		private float getErrorStrengthFromUser()
 		{
 			bool validInput = false;
-			float errorStrength;
+			float errorStrength = 0;
 			
 			while(validInput == false){
 				Console.WriteLine("Please select an error strength between {0} and {1}", Defaults.MIN_ERROR_STRENGTH, Defaults.MAX_ERROR_STRENGTH);
-				errorStrength= ToFloat(Console.ReadLine());
+				errorStrength= float.Parse(Console.ReadLine(), System.Globalization.CultureInfo.InvariantCulture);
 				
 				if(errorStrength <= Defaults.MAX_ERROR_STRENGTH && errorStrength >= Defaults.MIN_ERROR_STRENGTH)
 				{

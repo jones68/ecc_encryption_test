@@ -1,0 +1,6 @@
+C:\Users\J\Documents\SharpDevelop Projects\ecc_encryption_test\ecc_encryption_test\obj\Debug\ecc_encryption_test.csprojResolveAssemblyReference.cache
+C:\Users\J\Documents\SharpDevelop Projects\ecc_encryption_test\ecc_encryption_test\bin\Debug\ecc_encryption_test.exe.config
+C:\Users\J\Documents\SharpDevelop Projects\ecc_encryption_test\ecc_encryption_test\bin\Debug\ecc_encryption_test.exe
+C:\Users\J\Documents\SharpDevelop Projects\ecc_encryption_test\ecc_encryption_test\bin\Debug\ecc_encryption_test.pdb
+C:\Users\J\Documents\SharpDevelop Projects\ecc_encryption_test\ecc_encryption_test\obj\Debug\ecc_encryption_test.exe
+C:\Users\J\Documents\SharpDevelop Projects\ecc_encryption_test\ecc_encryption_test\obj\Debug\ecc_encryption_test.pdb
